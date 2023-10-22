@@ -54,7 +54,7 @@ qsign 是一个神奇的 Sign API，由 ~~[fuqiuluo/unidbg-fetch-qsign](https://
 ## 环境准备
 
 1. 安装 `jdk1.8` 环境，这个百度都有。 
-2. 针对上面 go-cqhttp 的稳定版和开发版，这里我们会用到的两个版本的编译包：[1.1.0](./)、[1.1.9](./)。对应关系为 `稳定版 => 1.1.0`、`开发版 => 1.1.9`，根据需求取其一即可，下载后解压至一个目录。
+2. 针对上面 go-cqhttp 的稳定版和开发版，这里我们会用到的两个版本的编译包：[1.1.0](https://github.com/adachi-team/docs/releases/latest/download/1.1.0.zip)、[1.1.9](https://github.com/adachi-team/docs/releases/latest/download/1.1.9.zip)。对应关系为 `稳定版 => 1.1.0`、`开发版 => 1.1.9`，根据需求取其一即可，下载后解压至一个目录。（注：如果下载速度缓慢或无法下载，请使用GitHub下载代理工具）。
 
 ## 部署
 
