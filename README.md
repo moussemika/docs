@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://docs.adachi.top/images/adachi.png" width="200"/>
+    <img src="https://docs.adachi.work/images/adachi.png" width="200"/>
     <h3>- AdachiBOT -</h3>
     <div>
         <a href="https://docs.adachi.top" target="_blank">官方文档</a> &nbsp;|&nbsp;
