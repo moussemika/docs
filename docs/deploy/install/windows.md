@@ -1,3 +1,7 @@
+---
+sidebar: auto
+---
+
 # Windows 部署
 
 ::: warning

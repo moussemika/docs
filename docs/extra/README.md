@@ -33,8 +33,8 @@ go-cqhttp.exe
 
 - `account.uin`: 待登录的 qq 号
 - `account.password`: 待登录的 qq 密码
-- `account.sign-serv`er`: 两版本的 go-cqhttp 的此配置项不同，暂时不进行修改，下面 [qsign](#qsign) 部分将会说明。
-- `servers.ws.address: 将 `0.0.0.0:8080` 中的 `8080`，修改为自己期望 go-cqhttp 运行的端口，需要与 `Adachi-BOT` 的配置项 `base.yml => wsServer` 的端口所对应。
+- `account.sign-server`: 两版本的 go-cqhttp 的此配置项不同，暂时不进行修改，下面 [qsign](#qsign) 部分将会说明。
+- `servers.ws.address`: 将 `0.0.0.0:8080` 中的 `8080`，修改为自己期望 go-cqhttp 运行的端口，需要与 `Adachi-BOT` 的配置项 `base.yml => wsServer` 的端口所对应。
 
 配置完毕后再次运行上面的启动命令。go-cqhttp 将会开始尝试登录，此时根目录下会生成一个 `device.json` 设备文件，对于稳定版 `go-cqhttp`，文档下方将会用到这个文件。
 
@@ -53,7 +53,7 @@ qsign 是一个神奇的 Sign API，由 ~~[fuqiuluo/unidbg-fetch-qsign](https://
 
 ## 环境准备
 
-1. 安装 `jdk1.8` 环境，这个百度都有。 
+1. 安装 `jdk1.8` 环境，这个百度都有。
 2. 针对上面 go-cqhttp 的稳定版和开发版，这里我们会用到的两个版本的编译包：[1.1.0](https://github.com/adachi-team/docs/releases/latest/download/1.1.0.zip)、[1.1.9](https://github.com/adachi-team/docs/releases/latest/download/1.1.9.zip)。对应关系为 `稳定版 => 1.1.0`、`开发版 => 1.1.9`，根据需求取其一即可，下载后解压至一个目录。（注：如果下载速度缓慢或无法下载，请使用GitHub下载代理工具）。
 
 ## 部署
@@ -67,7 +67,7 @@ qsign 是一个神奇的 Sign API，由 ~~[fuqiuluo/unidbg-fetch-qsign](https://
 然后回到根目录，执行命令启动 qsign:
 
 ```bash
-# windows 下将 bin/unidbg-fetch-qsign.bat 改为 bin\unidbg-fetch-qsign.bat
+# windows 下将所有 / 改为 \
 bin/unidbg-fetch-qsign.bat --host="0.0.0.0" --port=11451 --count=3 --library=txlib/8.9.63 --android_id=45d4fa9c393ed6fb
 ```
 
@@ -95,15 +95,15 @@ sign-server: 'http://127.0.0.1:11451'
 回到根目录，执行命令启动 qsign:
 
 ```bash
-# windows 下将 bin/unidbg-fetch-qsign.bat 改为 bin\unidbg-fetch-qsign.bat
-bin\unidbg-fetch-qsign.bat --basePath=txlib\8.9.63
+# windows 下将所有 / 改为 \
+bin/unidbg-fetch-qsign.bat --basePath=txlib/8.9.63
 ```
 
 启动成功后，回到 go-cqhttp 的目录，打开 `config.yml`，修改 `account.sign-server` 的内容：
 
 ```yaml
-sign-servers: 
-  - url: 'http://127.0.0.1:11451'  # 11451 唏嘘改为刚刚配置的 qsign 服务端口
+sign-servers:
+  - url: 'http://127.0.0.1:11451'  # 11451 改为刚刚配置的 qsign 服务端口
     key: '1919810'  # 上面 qsign config.json 中的 key 值
 ```
 
