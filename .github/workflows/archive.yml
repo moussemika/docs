@@ -1,0 +1,26 @@
+name: Archive Branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_archive_pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up GitHub CLI
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - run: |
+          npm install -g github-cli
+
+      - name: Create Archive PR
+        run: |
+          gh auth login --with-token ${{ secrets.ACCESS_TOKEN }}
+          gh pr create --base archive --head main --title "Archive PR" --body "This is an archive PR created automatically after merging to main branch."
