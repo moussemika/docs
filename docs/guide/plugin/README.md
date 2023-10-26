@@ -55,7 +55,6 @@ type SubUser = {
 export interface PluginSetting {
     name: string;
     cfgList: cmd.ConfigType[];
-    aliases?: string[];
     server?: {
         routers?: Record<string, Router>;
     };
@@ -82,6 +81,7 @@ export interface PluginSetting {
         /** 修改下载后的文件路径 */
         replacePath?: ( path: string, pluginKey: string | undefined, bot: BOT ) => string;
     }; // 从线上同步更新静态资源
+    publicDirs?: string[]; // 插件静态资源目录
     subscribe?: {
         name: string;
         getUser: ( bot: BOT ) => Promise<SubUser> | SubUser;
@@ -119,6 +119,12 @@ export interface PluginSetting {
 可选配置，是否启用框架自带的 oss 自动更新静态资源支持。传入**对象**或**指向 oss 清单文件的 url**来开启。
 
 详情见 [下载插件静态资源](./static-resource.md)。
+
+### publicDirs
+
+可选配置，配置支持存放静态资源的目录列表。
+
+详情见 [静态资源托管目录](./public-dirs.md)。
 
 ### subscribe
 

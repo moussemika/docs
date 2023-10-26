@@ -84,6 +84,9 @@ export default defineConfig( {
                     title: "下载插件静态资源",
                     path: "plugin/static-resource"
                 }, {
+                    title: "静态资源托管目录",
+                    path: "plugin/public-dirs"
+                }, {
                     title: "订阅服务支持",
                     path: "plugin/subscribe"
                 }, {
