@@ -11,7 +11,7 @@
 与[手动部署](./manual.md)相同的步骤
 
 ```bash
-git clone https://ghproxy.com/https://github.com/SilveryStar/Adachi-BOT.git
+git clone https://mirror.ghproxy.com/https://github.com/SilveryStar/Adachi-BOT.git
 cd Adachi-BOT
 ```
 

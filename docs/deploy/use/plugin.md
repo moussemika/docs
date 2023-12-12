@@ -18,7 +18,7 @@ bot 的所有插件都应当存放至 `src/plugins` 目录下。
 # 进入插件目录
 cd src/plugins
 # 阅读文档，获取安装指令
-git clone https://ghproxy.com/https://github.com/BennettChina/hot-news.git
+git clone https://mirror.ghproxy.com/https://github.com/BennettChina/hot-news.git
 # 重启项目或重载全部插件
 ```
 

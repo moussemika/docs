@@ -67,7 +67,7 @@ ZIP」，下载到你指定的地方解压即可。
    manually」。
 2. 下载完成后同样无脑「Next」即可完成安装。
 3. 在任何一个你创建的文件夹中，空白处右键鼠标，选择「Git Bash
-   Here」，然后在弹出的命令行窗口中输入 `git clone https://ghproxy.com/https://github.com/SilveryStar/Adachi-BOT.git` ，很快就能下载完成。
+   Here」，然后在弹出的命令行窗口中输入 `git clone https://mirror.ghproxy.com/https://github.com/SilveryStar/Adachi-BOT.git` ，很快就能下载完成。
 
 ## 启动
 

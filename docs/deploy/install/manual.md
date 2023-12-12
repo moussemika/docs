@@ -15,7 +15,7 @@
 切换到你所希望存放 bot 的目录，拉取项目源码
 
 ```bash
-git clone https://ghproxy.com/https://github.com/SilveryStar/Adachi-BOT.git
+git clone https://mirror.ghproxy.com/https://github.com/SilveryStar/Adachi-BOT.git
 ```
 
 进入项目根目录，安装项目依赖
