@@ -39,9 +39,11 @@ windows 官方仓库版本较低，可通过此地址下载较高版本 `redis`:
 docker run -d -p 6379:6379 --name bot-redis -v /usr/data/redis:/data redis --appendonly yes
 ```
 
-## go-cqhttp
+## OneBot 实现
 
-adachi-bot 目前针对 [go-cqhttp](https://docs.go-cqhttp.org/) 进行了对接，需要通过 [go-cqhttp](https://docs.go-cqhttp.org/) 开启**正向 ws 通讯**来得以正常工作。
+adachi-bot 目前接入了 [OneBot-11](https://github.com/botuniverse/onebot-11) 标准，需要额外启动一个适配 `OneBot-11` 的实现端并开启**正向 ws 通讯**，来提供底层消息通讯服务。
+
+可用实现端列表可以在 [OneBot 生态](https://onebot.dev/ecosystem.html#onebot-11-10-cqhttp)中查看。
 
 ::: tip
 这个[空间隙缝](../../extra/README.md)一样的东西刚刚钻进去一个永远十七岁的少女，要不要进去看看？

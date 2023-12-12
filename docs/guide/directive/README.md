@@ -31,6 +31,7 @@ interface CommandCfg {
     scope?: MessageScope;
     display?: boolean;
     ignoreCase?: boolean;
+    dotAll?: boolean;
     priority?: number;
     start?: boolean;
     stop?: boolean;
@@ -122,6 +123,14 @@ interface CommandCfg {
 表示正则匹配是否忽略大小写。
 
 > 需要注意的是，开启此选项后指令所接收到的用户输入内容将全部被转为小写内容，可能会导致内容的误识别。
+
+### dotAll
+
+* 类型: [boolean][boolean]
+* 缺省值: `true`
+* 允许用户配置: `否`
+
+默认情况下，正则符号 `.` 匹配除换行符与回车符外的所有单个字符，开启此项后将允许正则符号 `.` 匹配任意单个字符。
 
 ### start
 

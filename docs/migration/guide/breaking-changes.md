@@ -10,7 +10,7 @@
 
 ## 核心库
 
-* [`bot.client` 类进行了适配 `go-cqhttp` 的重写](../core/README.md)
+* [`bot.client` 类进行了适配 `OneBot-11` 的重写](../core/README.md)
 * [`config` 工具类重构](../core/config.md)
 * [`refresh` 类从全局工具类中移除](../core/refresh.md)
 * `file` 绝大多数方法改为异步，并同时提供了同步版本，例如 `loadYaml`（异步） 与 `loadYamlSync`（同步），建议尽可能地使用异步版本。

@@ -88,17 +88,18 @@ config = {
 
 ## 配置项变更
 
-由于适配 go-cqhttp 等需要，对属性进行了一定的增加删除。
+由于接入 OneBot 标准等需要，对属性进行了一定的增加删除。
 
 ### 删除配置项
 
-- `qrcode`、`number`、`password`、`platform`、`ffmpegPath`、`ffprobePath`: 对接 go-cqhttp 后，bot 框架本身不再提供账号登陆、ffmpeg 音视频解析等功能
+- `qrcode`、`number`、`password`、`platform`、`ffmpegPath`、`ffprobePath`: 接入 OneBot 标准后，bot 框架本身不再提供账号登陆、ffmpeg 音视频解析等功能
 - `helpPort`、`webConsole.consolePort`: 共用 server 服务后，help 组件与 webconsole 不再需要单独占用端口
 - `useWhitelist`: 已存在新的 `whiteList` 配置项对象，不再需要该属性
 
 ### 新增配置项
 
-- `base.wsServer`: go-cqhttp 所提供的 websocket 地址，格式 `ip:端口`。
+- `base.wsServer`: OneBot 实现所提供 event 事件上报的正向 websocket 地址，格式 `ip:端口/地址`。
+- `base.wsApiServer`: OneBot 实现所提供 api 调用的正向 websocket 地址，格式 `ip:端口/地址`，当置空时，默认使用 `base.wsServer`。
 - `base.renderPort`: 现 express server 服务已整合为同一个，该配置项用于 server 服务所占用的端口。若使用 `docker` 启动，则修改此项后应同步更改 `docker-compose.yml` 中 `port` 的第二个值。
 - `whiteList`: `whiteList` 工具类合并后的产物，用于定义**白名单的开启与关闭**与**白名单所限制的成员列表**
 

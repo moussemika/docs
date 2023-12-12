@@ -16,7 +16,13 @@ bot 运行相关的基本配置。
 * 类型: [string][string]
 * 缺省值: `127.0.0.1:11451`
 
-`go-cqhttp` 所提供的正向 `websocket` 服务地址，在 `go-cqhttp` 的配置文件中查看。
+OneBot 实现所提供 event 事件上报的正向 websocket 地址.
+
+### wsApiServer
+
+* 类型: [string][string]
+
+OneBot 实现所提供 api 调用的正向 websocket 地址，当置空时，默认使用 [wsServer](#wsServer)。
 
 ### master
 
@@ -63,6 +69,13 @@ BOT 在响应指令时，是否需要 at 用户。部分指令的响应无视本
 * 缺省值: `true`
 
 是否强制要求添加好友后才能使用 BOT，开启后未添加好友时 BOT 将不会响应并提示对方请先添加好友。
+
+### apiTimeout
+
+* 类型: [number][number]
+* 缺省值: `20000`
+
+设置等待 OneBot 实现响应 api 的最大等待时间，超出后报错 `${ action } 响应超时`，单位秒。
 
 ### renderPort
 
@@ -140,6 +153,13 @@ BOT 启动所依赖端口（网页控制台、公共路由等）。
 * 缺省值: `true`
 
 启用参数校验提示。开启后若指令参数错误，BOT 将会给予提示。
+
+### concurrency
+
+* 类型: [number][number]
+* 缺省值: `10`
+
+bot 可并发响应的指令数量，同时响应的指令数量超过这个数值后，将会排队等待响应。
 
 ### callTimes
 

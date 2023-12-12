@@ -6,9 +6,9 @@
 
 ## 前置
 
-首先你需要启动一个 [go-cqhttp](https://docs.go-cqhttp.org/) 服务，开启 **正向 websocket**，并于 `config.yml` 中配置 **正向 websocket** 服务地址。
+首先你需要启动一个适配 OneBot v11 的实现端，例如[go-cqhttp](https://docs.go-cqhttp.org/)、[lc-cn/onebots](https://github.com/lc-cn/onebots)，更多的可在 [OneBot 生态](https://onebot.dev/ecosystem.html#onebot-11-10-cqhttp) 查看。
 
-并检查是否正常启动了 `redis` 数据库。
+在实现端中开启 **正向 websocket**，配置 **正向 websocket** 服务地址。并检查是否正常启动了 `redis` 数据库。
 
 ## 拉取项目源码
 
@@ -35,7 +35,7 @@ pnpm start
 
 在看到终端打印配置文件创建成功的提示后，项目根目录下将会生成一个 `config` 目录，这是 `Adachi-BOT` 的配置文件所在目录。
 
-打开 `config/base.yml`，修改 `master` 为主人 qq 号码，`wsServer` 为上方 `go-cqhttp` 配置文件中设置的 **正向 websocket** 服务地址。
+打开 `config/base.yml`，修改 `master` 为主人 qq 号码，并根据实现端所提供的**正向 websocket 服务**地址，按需填入 `wsServer` 与 `wsApiServer`。
 
 一般情况下，其他配置文件内容无需修改。你同样可以参考 [配置项](../../config/base.md) 来酌情修改。
 
