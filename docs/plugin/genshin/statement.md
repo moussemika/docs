@@ -7,4 +7,4 @@
 3. 本项目仅供学习交流技术使用，严禁用于任何商业用途和非法行为
 
 ## 版权声明
-[本项目](https://github.com/SilveryStar/Adachi-BOT) 与 [原神](https://ys.mihoyo.com/) 相关的几乎所有的资源都取自于 [Genshin Impact Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki) 或其中的资源的再处理，故此，我们也依照 [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) 协议将资源公开。如果你想获得这些资源，请发送申请到 `silverystar.top@gmail.com` ，注意说明来意。
+[本项目](https://github.com/SilveryStar/Adachi-BOT) 与 [原神](https://ys.mihoyo.com/) 相关的几乎所有的资源都取自于 [Genshin Impact Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki) 与 [Project Amber](https://ambr.top/)，或其中的资源的再处理，故此，我们也依照 [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) 协议将资源公开。如果你想获得这些资源，请发送申请到 `silverystar.top@gmail.com` ，注意说明来意。

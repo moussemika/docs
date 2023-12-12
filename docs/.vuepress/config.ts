@@ -53,7 +53,8 @@ export default defineConfig( {
             "/plugin/genshin/": [
                 "",
                 "picture",
-                "statement"
+                "statement",
+                "thanks"
             ],
             "/guide/": [ {
                 title: "开始",

@@ -1,8 +1,10 @@
 # 配置
 
+插件的配置文件将会在 bot 启动之后于 `config/genshin` 目录下生成。
+
 ## cookies.yml
 
-`genshin` 插件用于执行 `mys`, `uid`, `aby` 等指令所需的 `cookies` ，可配置多个。
+插件用于执行 `mys`, `uid`, `aby` 等指令所需的 `cookies` ，可配置多个。
 
 ```yaml
 cookies:
@@ -10,11 +12,15 @@ cookies:
   - cookieB
 ```
 
-## genshin.yml
+## main.yml
 
-`genshin` 插件相关配置。
+插件主要配置。
 
-### cardWeaponStyle
+### card
+
+人物卡片相关，影响命令：`uid` 与 `mys`
+
+**weaponStyle**
 
 * 类型: `normal|weaponA|weaponB`
 * 默认值: `normal`
@@ -27,7 +33,7 @@ cookies:
   <img :src="$withBase('/demo/config/weaponB.png')" alt="ERROR"/>
 </center>
 
-### cardProfile
+**profile**
 
 * 类型: `random|user`
 * 默认值: `random`
@@ -37,37 +43,70 @@ cookies:
 * random: 从玩家所用于的角色中随机抽取。
 * user: 查询用户的 QQ 头像。
 
-### showCharScore
+### chara
+
+影响命令：`char`
+
+**showScore**
 
 * 类型: `boolean`
 * 默认值: `true`
 
 角色信息查询是否显示评分。
 
-### wishLimitNum
+### wish
+
+影响命令：`wish`
+
+**limit**
 
 * 类型: `number`
 * 默认值: `99`
 
 单次祈愿的最大抽取十连次数。
 
-### verifyEnable
+### panel
+
+面板查询相关，影响命令: `panel`、`pud`
+
+**uidQuery**
+
+* 类型: `boolean`
+* 默认值: `false`
+
+是否允许使用 `uid` 查询/更新，为防止部分用户恶意遍历查询 `uid`，这里默认关闭，有需要的可以开启
+
+**enKaApi**
+
+* 类型: `string`
+* 默认值: `https://enka.shinshin.moe/`
+
+面板数据来源地址，默认为 Enka 官方地址。可修改为 [@MiniGrayGay](https://github.com/MiniGrayGay) 提供的国内反代地址以解决连接异常问题
+
+* 代理地址A：https://enka.microgg.cn/"
+* 代理地址B：https://enka.minigg.cn/"
+
+### verify
+
+绕过验证码服务相关配置，服务由 [@MiniGrayGay](https://github.com/MiniGrayGay) 提供。
+
+**enable**
 
 * 类型: `boolean`
 * 默认值: `false`
 
 是否开启尝试绕过米游社验证码功能。
 
-### verifyRepeat
+**repeat**
 
 * 类型: `number`
 * 默认值: `1`
 
 绕过验证码失败后，重新尝试次数。
 
-### verifyToken
+**token**
 
 * 类型: `number`
-* 默认值: `3H>Ngk`
+* 默认值: `随机字符`
 
 绕过验证码服务所必须的 token。

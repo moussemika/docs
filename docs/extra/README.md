@@ -67,8 +67,10 @@ qsign 是一个神奇的 Sign API，由 ~~[fuqiuluo/unidbg-fetch-qsign](https://
 然后回到根目录，执行命令启动 qsign:
 
 ```bash
-# windows 下将所有 / 改为 \
-bin/unidbg-fetch-qsign.bat --host="0.0.0.0" --port=11451 --count=3 --library=txlib/8.9.63 --android_id=45d4fa9c393ed6fb
+# linux
+bin/unidbg-fetch-qsign --host="0.0.0.0" --port=11451 --count=3 --library=txlib/8.9.63 --android_id=45d4fa9c393ed6fb
+# windows
+bin\unidbg-fetch-qsign.bat --host="0.0.0.0" --port=11451 --count=3 --library=txlib\8.9.63 --android_id=45d4fa9c393ed6fb
 ```
 
 需要对命令中的一些部分稍作修改：
@@ -95,8 +97,10 @@ sign-server: 'http://127.0.0.1:11451'
 回到根目录，执行命令启动 qsign:
 
 ```bash
-# windows 下将所有 / 改为 \
-bin/unidbg-fetch-qsign.bat --basePath=txlib/8.9.63
+# linux
+bin/unidbg-fetch-qsign --basePath=txlib/8.9.63
+# windows
+bin\unidbg-fetch-qsign.bat --basePath=txlib\8.9.63
 ```
 
 启动成功后，回到 go-cqhttp 的目录，打开 `config.yml`，修改 `account.sign-server` 的内容：
@@ -144,4 +148,4 @@ screen -r 服务名称
 通常情况下建议部署开发版，稳定版由于仅能使用 `1.1.0` 版本的 `qsign`，较容易被冻结。一旦冻结两次后基本就会永久 `45`，这个号彻底和 qq bot 说再见了。   
 而开发版相对来说存活更长久一些。
 
-但不管是哪一种，qq bot 都在生命倒计时了，只能说有缘再见了。
+但不管是哪一种，非官方 qq bot 都在生命倒计时了，只能说有缘再见了。
