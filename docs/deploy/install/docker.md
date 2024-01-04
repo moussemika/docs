@@ -27,7 +27,17 @@ docker-compose up -d
 
 与手动部署一样，初次运行将在根目录 `config` 文件夹下生成配置文件模板，需要自行对修改配置文件内容。
 
-但当使用本地自建的 `onebots` 服务时，对于 `config/base.yml => wsServer` 的配置则需要额外注意：ip 部分不能使用 `localhost` 或 `127.0.0.1`，根据不同环境需要按照以下方式手动获取主机地址
+不同的是，当使用本地自建的 `OneBot` 实现时，`config/base.yml => wsServer` 中的 ip 部分不能使用 `localhost` 或 `127.0.0.1`。
+
+首先检查 Docker 版本：
+
+```bash
+docker -v
+```
+
+若为 `18.03` 以上，可以使用 `host.docker.internal` 来替代 ip 部分，例如: `host.docker.internal:8080`。
+
+反之需要根据不同环境按照以下方式手动获取主机地址
 
 ### linux
 
