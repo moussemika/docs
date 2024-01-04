@@ -44,10 +44,10 @@ docker -v
 查看网关信息
 
 ```bash
-ifconfig
+ifconfig eth0
 ```
 
-在结果中查找 `eth0:` 开头的一项，`inet` 后即为主机地址
+结果中 `inet` 后即为主机地址
 
 ![eth0](/install/ifconfig.png)
 
