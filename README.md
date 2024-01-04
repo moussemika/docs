@@ -16,7 +16,7 @@
     <small>&gt; 集成多种基础功能，易开发拓展的聊天机器人框架 &lt;</small>
     <div>
         <br/>
-        <a href="https://github.com/SilveryStar/Adachi-BOT/issues/137">~ QQ频道上线 ~</a>
+        <a href="https://github.com/SilveryStar/Adachi-BOT/issues/137">~ QQ频道上线 ~</a> <br/>
         <a href="https://chat.adachi.work/#/room/#public:adachi.work">~ 欢迎加入Matrix房间 ~</a>
     </div>
 </div>
