@@ -93,7 +93,7 @@ sign-servers:
 
 由于 go-cqhttp 仅支持 `8.9.63`，因此需要选用其他的实现端，例如 [onebots](https://github.com/lc-cn/onebots)。
 
-> Windows 用户可尝试使用 [qsign-onekey](https://github.com/rhwong/qsign-onekey) 来解决 go-cqhhtp + qsign 的版本过低问题
+> Windows 用户可尝试使用 [qsign-onekey](https://github.com/rhwong/qsign-onekey) 来解决 go-cqhttp + qsign 的版本过低问题
 
 登陆成功后，前往 `Adachi-BOT` 修改 `config -> base.yml` 配置项内容，以连接到 go-cqhttp 实现端:
 
