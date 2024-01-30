@@ -11,10 +11,20 @@ sidebar: auto
 
 bot 运行相关的基本配置。
 
+### reverseClient
+
+* 类型: [boolean][boolean]
+* 缺省值: `false`
+
+定义 bot 与实现端的连接方式，默认为 `false` 即**正向 ws 连接**，由 bot 主动去连接实现端，需填写下方的 `wsServer` 与 `wsApiServer` 配置。  
+反之设为 `true` 时为**反向 ws 连接**，由 bot 创建 ws 服务，被动等待实现端连接，需填写下方的 `wsPort` 配置。
+
 ### wsServer
 
 * 类型: [string][string]
 * 缺省值: `127.0.0.1:11451`
+
+仅当 `reverseClient` 为 `false` 时有效。
 
 OneBot 实现所提供 event 事件上报的正向 websocket 地址.
 
@@ -22,7 +32,20 @@ OneBot 实现所提供 event 事件上报的正向 websocket 地址.
 
 * 类型: [string][string]
 
+仅当 `reverseClient` 为 `false` 时有效。
+
 OneBot 实现所提供 api 调用的正向 websocket 地址，当置空时，默认使用 [wsServer](#wsServer)。
+
+### wsPort
+
+* 类型: [string][string]
+* 缺省值: `11451`
+
+仅当 `reverseClient` 为 `true` 时有效。
+
+提供给 OneBot 实现连接的 websocket 服务所占用的端口，完整链接为 `ws://127.0.0.1:{wsPort}`，填入 OneBot 实现的**反向ws连接地址列表**即可。
+
+> 需要注意的是，若使用 Docker 方式部署，则需要在 `docker-compose.yml` 的 `bot.port` 中放行对应端口。
 
 ### master
 
