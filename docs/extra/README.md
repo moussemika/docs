@@ -106,6 +106,67 @@ wsApiServer: 127.0.0.1:8080/api
 
 启动 Adachi-BOT，显示 `已连接到 xxx 事件服务器` 即代表连接成功。
 
+## ntqq
+
+目前比较稳定的实现端，采用[onebot-11 标准](https://github.com/botuniverse/onebot-11)，支持linux签名，如需使用windows和macOS协议，需要自行解决签名，[文档](https://github.com/LagrangeDev/Lagrange.Core/blob/master/README_zh.md)
+
+### 部署
+
+使用docker进行部署
+
+```bash
+docker run -itd -p 8081:8081 -v /path-to-data:/app/data -e UID=$UID -e GID=$(id -g) ghcr.io/konatadev/lagrange.onebot:edge
+```
+
+首次运行提示 `Please Edit the appsettings.json to set configs and press any key to continue`  ，请参考[文档](https://github.com/LagrangeDev/Lagrange.Core/blob/master/Docker_zh.md)
+
+启动容器之后，会生成 `/path-to-data/appsettings.json` ，我们需要对该配置文件进行编辑：
+
+- `Uin`: 待登录的 qq 号 (为0启用扫码登录)
+- `Password`: 待登录的 qq 密码（为""启用扫码登陆）
+```yaml
+"Account": {
+    "Uin": 0,
+    "Password": "",
+    "Protocol": "Linux",
+    "AutoReconnect": true,
+    "GetOptimumServer": true
+  },
+```
+
+有关WS的配置，请根据自己的需求进行选配映射（ `Adachi-BOT` 中的 `config -> base.yml` ，参考[reverseClient](https://docs.adachi.work/config/base.html#reverseclient)）：
+
+```yaml
+# /path-to-data/appsettings.json
+{
+  # 反向代理
+  "Type": "ReverseWebSocket", 
+  "Port": 8080,
+},
+{
+  #正向代理
+  "Type": "ForwardWebSocket",
+  "Port": 8081,
+}
+```
+
+以 `reverseClient: false` 为例（正向）
+
+```yaml
+wsServer: server-IPv4:8081/event
+wsApiServer: server-IPv4:8081/api
+```
+
+配置完成后进入刚才启动的docker容器（账号密码登录）或直接打印容器logs（扫码登录），按提示进行登录操作
+
+```bash
+docker attach <container_id_or_name>
+or
+docker logs <container_id_or_name>
+```
+
+最后，启动 Adachi-BOT，显示 `已连接到 xxx 事件服务器` 即代表连接成功。
+
 ## 其他实现端注意事项
 
 其他实现端部署时各自参考对应的官方文档部署，部署成功后需要参考**日志打印**或**文档说明**获取到启动后的 `event` 与 `api` 服务地址，分别填入 Adachi-BOT 的 `wsServer` 与 `wsApiServer` 配置项中。
