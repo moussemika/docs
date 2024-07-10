@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-        
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'pnpm'
 
       - name: Install Dependencies
@@ -35,6 +35,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_dir: ./docs/.vuepress/dist
+          publish_dir: ./dist
           cname: docs.adachi.work
 

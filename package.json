@@ -2,16 +2,16 @@
   "name": "adachi-docs",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "deploy-gh": "yarn docs:build && bash scripts/deploy-gh.sh"
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vuepress": "^1.9.9"
+    "vitepress": "^1.3.0"
   }
 }
