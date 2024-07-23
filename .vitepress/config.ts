@@ -12,7 +12,12 @@ export default defineConfig({
 	themeConfig: {
 		// https://vitepress.dev/reference/default-theme-config
 		siteTitle: "Adachi-BOT",
-		lastUpdatedText: "最后编辑于",
+		lastUpdated: {
+			text: "最后编辑于"
+		},
+		search: {
+			provider: "local"
+		},
 		outline: {
 			label: "页面导航",
 		},
@@ -42,7 +47,7 @@ export default defineConfig({
 			{ text: "FAQ", link: "/faq/" },
 			{ text: "致谢", link: "/thank/" }
 		],
-		
+
 		sidebar: {
 			"/deploy/": [ {
 				text: "安装",
@@ -308,12 +313,12 @@ export default defineConfig({
 				} ]
 			} ]
 		},
-		
+
 		footer: {
 			message: "Released under the MIT License.",
 			copyright: "Copyright © 2021-2024 SilveryStar"
 		},
-		
+
 		socialLinks: [
 			{
 				icon: {
